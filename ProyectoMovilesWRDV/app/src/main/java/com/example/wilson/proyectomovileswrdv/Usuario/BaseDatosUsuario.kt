@@ -13,7 +13,7 @@ class BaseDatosUsuario {
     companion object {
 
         fun insertarUsuario(usuario: Usuario) {
-            "http://192.168.100.189:1337/Usuarios".httpPost(listOf("idUsuario" to usuario.idUsuario,"idUser" to usuario.username, "password" to usuario.password))
+            "http://172.29.64.146:1337/Usuarios".httpPost(listOf("idUsuario" to usuario.idUsuario,"username" to usuario.username, "password" to usuario.password))
                     .responseString { request, _, result ->
                         Log.d("http-ejemplo", request.toString())
                     }
@@ -23,7 +23,7 @@ class BaseDatosUsuario {
             val usuarios: ArrayList<Usuario> = ArrayList()
             val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
             StrictMode.setThreadPolicy(policy)
-            val (request, response, result) = "http://192.168.100.189:1337/Usuarios".httpGet().responseString()
+            val (request, response, result) = "http://172.29.64.146:1337/Usuarios".httpGet().responseString()
             val jsonStringUsuario = result.get()
 
             val parser = Parser()
@@ -32,7 +32,7 @@ class BaseDatosUsuario {
 
             array.forEach {
                 val idUsuario = it["idUsuario"] as Int
-                val username = it["idUser"] as String
+                val username = it["username"] as String
                 val password = it["password"] as String
                 val usuario = Usuario(idUsuario, username, password, 0, 0)
                 usuarios.add(usuario)

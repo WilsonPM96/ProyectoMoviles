@@ -60,7 +60,7 @@ class ReservasUsuarioAdapter (private val reservasList: List<Reservas>) :  Recyc
         holder.detalles.setOnClickListener{
             v: View ->
             val intent = Intent(v.context, DetalleReservasActivity::class.java)
-            intent.putExtra("detallesReserva", reserva)
+            intent.putExtra("idReserva",reserva.idReserva)
             v.context.startActivity(intent)
         }
         holder.itemView.setOnLongClickListener {

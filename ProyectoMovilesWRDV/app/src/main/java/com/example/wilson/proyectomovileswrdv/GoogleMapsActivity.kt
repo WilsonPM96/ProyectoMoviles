@@ -1,10 +1,15 @@
 package com.example.wilson.proyectomovileswrdv
+import android.app.Activity
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.speech.RecognizerIntent
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import com.google.android.gms.maps.*
 
 import com.google.android.gms.maps.model.*
@@ -65,12 +70,10 @@ class GoogleMapsActivity :
 
 
             moverCamaraPorLatLongZoom(epnLatLang, zoom)
-
-
-            button_cliente.setOnClickListener { v ->
-                anadirMarcador(clienteLatLang, "Marcador del Cliente")
-                moverCamaraPorPosicion(cliente)
+            btn_buscar_por_voz.setOnClickListener {
+                v:  View? -> getSpeechInput(v)
             }
+
         }
     }
 
@@ -153,6 +156,30 @@ class GoogleMapsActivity :
     }
 
     override fun onCameraIdle() {
+    }
+
+    fun getSpeechInput (view: View?){
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+        if (intent.resolveActivity(getPackageManager()) !=null){
+            startActivityForResult(intent,10)
+        }
+        else{
+            Toast.makeText(this,"\n" +
+                    "Su dispositivo no es compatible con la entrada de voz", Toast.LENGTH_SHORT ).show()
+        }
+    }
+
+    override fun onActivityResult(requestCode:Int, resultCode:Int, data: Intent){
+        super.onActivityResult(requestCode, resultCode, data)
+        when (requestCode){
+            10 -> if (resultCode == Activity.RESULT_OK){
+                val result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+                txtBuscarLugar.setText(result.get(0))
+
+            }
+        }
     }
 
 

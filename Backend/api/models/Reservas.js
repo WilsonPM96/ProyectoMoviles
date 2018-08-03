@@ -13,7 +13,7 @@ module.exports = {
       type: "number"
     },
     idUsuario:{
-      model: "Usuarios"
+      type: "number"
     },
 
     fecha_ini:{
@@ -21,10 +21,6 @@ module.exports = {
     },
     fecha_fin:{
       type: "string"
-    },
-    detalles_reservas:{
-      collection:"DetalleReserva",
-      via:"idReserva"
     }
 
   },

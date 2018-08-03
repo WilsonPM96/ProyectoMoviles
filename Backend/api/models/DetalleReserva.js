@@ -10,13 +10,13 @@ module.exports = {
   attributes: {
 
     idReserva:{
-      model:"Reservas"
+      type:"number"
     },
     idLugar:{
-      model:"Lugares"
+      type:"number"
     },
     estado:{
-      type: "boolean"
+      type: "number"
     },
     fecha:{
       type: "string"

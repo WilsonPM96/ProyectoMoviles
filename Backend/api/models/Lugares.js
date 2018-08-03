@@ -23,10 +23,6 @@ module.exports = {
 
     horarioAtencionLugar:{
       type: "string"
-    },
-    detalles_reservas_lug:{
-      collection:"DetalleReserva",
-      via:"idLugar"
     }
 
   },

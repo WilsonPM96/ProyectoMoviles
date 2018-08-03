@@ -25,6 +25,7 @@
     <string name="txt_fecha">Fecha de Reserva</string>
     <string name="txt_hora_ini">Hora de Inicio</string>
     <string name="txt_hora_fin">Hora Fin</string>
+    <string name="btn_buscarporvoz">Buscar Por Voz</string>
 
     <string name="title_activity_google_maps">Reserva</string>
 </resources>

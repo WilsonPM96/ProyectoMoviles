@@ -19,11 +19,6 @@ module.exports = {
 
     password:{
       type: "string",
-    },
-
-    reservas:{
-      collection:"Reservas",
-      via:"idUsuario"
     }
 
   },

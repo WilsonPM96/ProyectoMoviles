@@ -15,31 +15,36 @@
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:layout_alignParentStart="true"
+            android:layout_height="552dp"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="103dp"
+            android:layout_marginTop="50dp"
             tools:context=".GoogleMapsActivity" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_alignParentStart="true"
+            android:layout_height="52dp"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true">
 
-            <Button
-                android:id="@+id/button_cliente"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/txtBuscarLugar"
+                android:layout_width="351dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
+                android:layout_marginStart="10dp"
+                android:text="TextView" />
+
+            <Button
+                android:id="@+id/btn_buscar_por_voz"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="59dp"
-                android:layout_marginLeft="59dp"
-                android:layout_marginTop="33dp"
-                android:text="Cliente" />
+                android:background="@mipmap/m" />
 
         </RelativeLayout>
 
