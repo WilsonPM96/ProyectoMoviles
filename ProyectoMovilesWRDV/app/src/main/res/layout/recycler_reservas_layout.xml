@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/txtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtFecha_Ini"
+        android:layout_width="210dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/txtUsername"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtFecha_Fin"
+        android:layout_width="210dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/txtFecha_Ini"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnDetallesReservas"
+        android:layout_width="183dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/txtUsername"
+        android:layout_toEndOf="@+id/txtFecha_Ini"
+        android:background="@android:color/holo_red_dark"
+        android:text="@string/btn_Detalles_Reservas"
+        android:textColor="@android:color/background_light" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary" />
+
+</RelativeLayout>

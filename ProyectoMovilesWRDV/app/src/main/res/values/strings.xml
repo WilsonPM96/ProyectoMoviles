@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Simple Reservation APP</string>
+    <string name="nombreApp">Simple Reservation APP</string>
+    <string name="inicia_sesi_n">Inicia Sesión</string>
+    <string name="btn_empezar">Empezar</string>
+    <string name="btn_registar">Registar</string>
+    <string name="btn_logear">Ingresar</string>
+    <string name="btn_reservar">Reservar</string>
+    <string name="btn_verReservas">Reservas Realizadas</string>
+    <string name="btn_Salir">Salir</string>
+    <string name="btn_Detalles_Reservas">Detalles Reserva</string>
+    <string name="menu_reservar">Reservar</string>
+    <string name="menu_reservas">Reservas</string>
+    <string name="menu_salir">Salir</string>
+    <string name="username_hint">Usuario</string>
+    <string name="pass_hint">Contraseña</string>
+    <string name="login">Login</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="txt_lista_reservas">Lista Reservas</string>
+    <string name="txt_detalles_reserva">Detalles Reserva</string>
+    <string name="txt_id_Lugar">Id Lugar</string>
+    <string name="txt_fecha">Fecha de Reserva</string>
+    <string name="txt_hora_ini">Hora de Inicio</string>
+    <string name="txt_hora_fin">Hora Fin</string>
+
+    <string name="title_activity_google_maps">Reserva</string>
+</resources>

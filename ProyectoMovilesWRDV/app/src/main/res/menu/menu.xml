@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/item_menu_reservar"
+        android:title="@string/menu_reservar" />
+    <item
+        android:id="@+id/item_menu_reservas"
+        android:title="@string/menu_reservas" />
+    <item
+        android:id="@+id/item_menu_salir"
+        android:title="@string/menu_salir" />
+
+
+</menu>
