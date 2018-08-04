@@ -21,10 +21,13 @@
     <string name="eliminar">Eliminar</string>
     <string name="txt_lista_reservas">Lista Reservas</string>
     <string name="txt_detalles_reserva">Detalles Reserva</string>
-    <string name="txt_id_Lugar">Id Lugar</string>
+    <string name="txt_id_Reserva">Id Reserva</string>
     <string name="txt_fecha">Fecha de Reserva</string>
+    <string name="txt_fecha_ini">Fecha de Inicio</string>
+    <string name="txt_fecha_fin">Fecha de Fin</string>
+    <string name="txt_id_Lugar">Id Lugar</string>
     <string name="txt_hora_ini">Hora de Inicio</string>
-    <string name="txt_hora_fin">Hora Fin</string>
+    <string name="txt_hora_fin">Hora de Fin</string>
     <string name="btn_buscarporvoz">Buscar Por Voz</string>
 
     <string name="title_activity_google_maps">Reserva</string>

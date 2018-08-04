@@ -1,0 +1,16 @@
+{"idLugar":1,"posX":-0.2103764,"posY":-78.4891095,"tipoLugar":"Universidad","ubicacionLugar":"La Patria","horarioAtencionLugar":"07:00-21:00","createdAt":1533359200542,"updatedAt":1533359200542,"id":1,"_id":1}
+{"idLugar":2,"posX":-0.2017289,"posY":-78.5027352,"tipoLugar":"Universidad","ubicacionLugar":"Avenida America","horarioAtencionLugar":"07:00-21:00","createdAt":1533359379876,"updatedAt":1533359379876,"id":2,"_id":2}
+{"idLugar":3,"posX":-0.1841885,"posY":-78.4955755,"tipoLugar":"Universidad","ubicacionLugar":"Occidental","horarioAtencionLugar":"07:00-21:00","createdAt":1533359408277,"updatedAt":1533359408277,"id":3,"_id":3}
+{"idLugar":4,"posX":-0.168046,"posY":-78.4749696,"tipoLugar":"Universidad","ubicacionLugar":"El Batan","horarioAtencionLugar":"07:00-21:00","createdAt":1533359434722,"updatedAt":1533359434722,"id":4,"_id":4}
+{"idLugar":5,"posX":-0.1971207,"posY":-78.4368923,"tipoLugar":"Universidad","ubicacionLugar":"Cumbaya","horarioAtencionLugar":"07:00-21:00","createdAt":1533359462101,"updatedAt":1533359462101,"id":5,"_id":5}
+{"idLugar":6,"posX":-0.2529636,"posY":-78.5258297,"tipoLugar":"Cine","ubicacionLugar":"El Recreo","horarioAtencionLugar":"11:00-21:00","createdAt":1533359506364,"updatedAt":1533359506364,"id":6,"_id":6}
+{"idLugar":7,"posX":-0.1773546,"posY":-78.4871637,"tipoLugar":"Cine","ubicacionLugar":"CCI","horarioAtencionLugar":"11:00-21:00","createdAt":1533359527149,"updatedAt":1533359527149,"id":7,"_id":7}
+{"idLugar":8,"posX":-0.1036076,"posY":-78.4927207,"tipoLugar":"Cine","ubicacionLugar":"Quicentro Shopping","horarioAtencionLugar":"11:00-21:00","createdAt":1533359546703,"updatedAt":1533359546703,"id":8,"_id":8}
+{"idLugar":9,"posX":-0.2870116,"posY":-78.5431106,"tipoLugar":"Cine","ubicacionLugar":"Quicentro Sur","horarioAtencionLugar":"11:00-21:00","createdAt":1533359576553,"updatedAt":1533359576553,"id":9,"_id":9}
+{"idLugar":10,"posX":-0.17949,"posY":-78.4810691,"tipoLugar":"Cine","ubicacionLugar":"Avenida 6 de Diciembre","horarioAtencionLugar":"11:00-21:00","createdAt":1533359602375,"updatedAt":1533359602375,"id":10,"_id":10}
+{"idLugar":11,"posX":-0.1794417,"posY":-78.49639,"tipoLugar":"Cine","ubicacionLugar":"CCI","horarioAtencionLugar":"11:00-21:00","createdAt":1533359631715,"updatedAt":1533359631715,"id":11,"_id":11}
+{"idLugar":12,"posX":-0.1762947,"posY":-78.4631741,"tipoLugar":"Parque","ubicacionLugar":"Metropolitano","horarioAtencionLugar":"08:00-21:00","createdAt":1533359672484,"updatedAt":1533359672484,"id":12,"_id":12}
+{"idLugar":13,"posX":-0.2878522,"posY":-78.5498183,"tipoLugar":"Parque","ubicacionLugar":"Las Cuadras","horarioAtencionLugar":"08:00-21:00","createdAt":1533359700771,"updatedAt":1533359700771,"id":13,"_id":13}
+{"idLugar":14,"posX":-0.2091502,"posY":-78.5007996,"tipoLugar":"Parque","ubicacionLugar":"El Ejido","horarioAtencionLugar":"08:00-21:00","createdAt":1533359726196,"updatedAt":1533359726196,"id":14,"_id":14}
+{"idLugar":15,"posX":-0.1862298,"posY":-78.4937723,"tipoLugar":"Parque","ubicacionLugar":"La Carolina","horarioAtencionLugar":"08:00-21:00","createdAt":1533359750700,"updatedAt":1533359750700,"id":15,"_id":15}
+{"idLugar":16,"posX":-0.1281612,"posY":-78.4917603,"tipoLugar":"Parque","ubicacionLugar":"Bicentenario","horarioAtencionLugar":"08:00-21:00","createdAt":1533359771370,"updatedAt":1533359771370,"id":16,"_id":16}

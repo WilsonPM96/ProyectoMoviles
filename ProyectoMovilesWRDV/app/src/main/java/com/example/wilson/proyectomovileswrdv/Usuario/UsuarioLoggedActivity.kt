@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.example.wilson.proyectomovileswrdv.GoogleMapsActivity
+import com.example.wilson.proyectomovileswrdv.Lugar.BaseDatosLugar
 import com.example.wilson.proyectomovileswrdv.MainActivity
 import com.example.wilson.proyectomovileswrdv.R
 import com.example.wilson.proyectomovileswrdv.Reservas.ReservasUsuarioActivity
@@ -59,13 +60,13 @@ class UsuarioLoggedActivity : AppCompatActivity() {
 
     fun iraReservar(){
         val intent= Intent(this, GoogleMapsActivity::class.java)
-        intent.putExtra("idUsuario", usuario?.idUsuario)
+        intent.putExtra("idUsuario", usuario)
         startActivity(intent)
     }
 
     fun iraReservasHechas(){
         val intent= Intent(this, ReservasUsuarioActivity::class.java)
-        intent.putExtra("idUsuario", usuario?.idUsuario)
+        intent.putExtra("idUsuario", usuario)
         startActivity(intent)
 
     }

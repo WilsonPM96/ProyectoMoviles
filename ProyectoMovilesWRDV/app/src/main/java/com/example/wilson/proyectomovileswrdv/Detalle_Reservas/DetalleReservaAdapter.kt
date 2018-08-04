@@ -1,13 +1,9 @@
 package com.example.wilson.proyectomovileswrdv.Detalle_Reservas
 
-import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.*
-import android.widget.Button
 import android.widget.TextView
 import com.example.wilson.proyectomovileswrdv.R
-import com.example.wilson.proyectomovileswrdv.Reservas.Reservas
-import com.example.wilson.proyectomovileswrdv.Reservas.ReservasUsuarioAdapter
 
 class DetalleReservaAdapter(private val detallereservasList: List<DetalleReservas>) :  RecyclerView.Adapter<DetalleReservaAdapter.MyViewHolder>() {
     private var position: Int = 0
@@ -22,20 +18,18 @@ class DetalleReservaAdapter(private val detallereservasList: List<DetalleReserva
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnCreateContextMenuListener {
 
-        var idReserva: TextView
         var idLugar: TextView
-       /* var fecha: TextView
+        var fecha: TextView
         var hora_ini: TextView
-        var hora_fin: TextView*/
+        var hora_fin: TextView
 
         lateinit var detallereserva: DetalleReservas
 
         init {
-            idReserva = view.findViewById(R.id.txtShowReservaId) as TextView
             idLugar = view.findViewById(R.id.txtShowIdLugar) as TextView
-            /*fecha = view.findViewById(R.id.txtShowfecha) as TextView
-            hora_ini = view.findViewById(R.id.txtShowhoraIni) as TextView
-            hora_fin = view.findViewById(R.id.txtShowhoraFin) as TextView*/
+            fecha = view.findViewById(R.id.txtShowFecha) as TextView
+            hora_ini = view.findViewById(R.id.txtShowHoraIni) as TextView
+            hora_fin = view.findViewById(R.id.txtShowHoraFin) as TextView
             view.setOnCreateContextMenuListener(this)
         }
 
@@ -55,11 +49,10 @@ class DetalleReservaAdapter(private val detallereservasList: List<DetalleReserva
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val detallereserva = detallereservasList[position]
-        holder.idReserva.text = detallereserva.idReserva.toString()
         holder.idLugar.text = detallereserva.idLugar.toString()
-       /* holder.fecha.text = detallereserva.fecha
+        holder.fecha.text = detallereserva.fecha
         holder.hora_ini.text = detallereserva.hora_ini
-        holder.hora_fin.text = detallereserva.hora_fin*/
+        holder.hora_fin.text = detallereserva.hora_fin
         holder.detallereserva = detallereserva
 
         holder.itemView.setOnLongClickListener {

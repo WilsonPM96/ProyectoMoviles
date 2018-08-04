@@ -3,12 +3,16 @@ package com.example.wilson.proyectomovileswrdv.Lugar
 import android.os.Parcel
 import android.os.Parcelable
 
-class Lugar(var idLugar: Int, var tipoLugar: String, var ubicacionLugar: String, var horarioAtencionLugar: String) : Parcelable {
+class Lugar(var idLugar: Int, var tipoLugar: String, var ubicacionLugar: String, var horarioAtencionLugar: String, var createdAt: Long, var updatedAt: Long, var posX: Double, var posY: Double) : Parcelable {
     constructor(parcel: Parcel) : this(
             parcel.readInt(),
             parcel.readString(),
             parcel.readString(),
-            parcel.readString()
+            parcel.readString(),
+            parcel.readLong(),
+            parcel.readLong(),
+            parcel.readDouble(),
+            parcel.readDouble()
     )
 
 
@@ -17,6 +21,10 @@ class Lugar(var idLugar: Int, var tipoLugar: String, var ubicacionLugar: String,
         parcel.writeString(tipoLugar)
         parcel.writeString(ubicacionLugar)
         parcel.writeString(horarioAtencionLugar)
+        parcel.writeLong(createdAt)
+        parcel.writeLong(updatedAt)
+        parcel.writeDouble(posX)
+        parcel.writeDouble(posY)
     }
 
     override fun describeContents(): Int {

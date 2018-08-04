@@ -10,11 +10,14 @@ import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.example.wilson.proyectomovileswrdv.Lugar.BaseDatosLugar
+import com.example.wilson.proyectomovileswrdv.Lugar.Lugar
 import com.google.android.gms.maps.*
 
 import com.google.android.gms.maps.model.*
 import kotlinx.android.synthetic.main.activity_google_maps.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class GoogleMapsActivity :
         AppCompatActivity(),
@@ -24,11 +27,35 @@ class GoogleMapsActivity :
         GoogleMap.OnCameraMoveCanceledListener,
         GoogleMap.OnCameraIdleListener{
 
+
     private lateinit var mMap: GoogleMap
 
+
+
+    var arregloLugares : ArrayList<Lugar> = BaseDatosLugar.getListofLugares()
     var arregloMarcadores = ArrayList<Marker>()
 
-    val epnLatLang = LatLng(-0.2103764, -78.4891095)
+
+
+    val epnLatLang = LatLng(arregloLugares[1].posX, arregloLugares[1].posY)
+    val centralLatLang= LatLng(arregloLugares[8].posX, arregloLugares[8].posY)
+    val uteLatLang= LatLng(arregloLugares[2].posX, arregloLugares[2].posY)
+    val udlaLatLang= LatLng(arregloLugares[3].posX, arregloLugares[3].posY)
+    val usfqLatLang= LatLng(arregloLugares[4].posX, arregloLugares[4].posY)
+
+    val multicinesRecreo = LatLng(arregloLugares[5].posX, arregloLugares[5].posY)
+    val multicinesCCI= LatLng(arregloLugares[6].posX, arregloLugares[6].posY)
+    val multicinesQS= LatLng(arregloLugares[7].posX, arregloLugares[7].posY)
+    val supercinesQS= LatLng(arregloLugares[0].posX, arregloLugares[0].posY)
+    val supercines6D= LatLng(arregloLugares[9].posX, arregloLugares[9].posY)
+    val cineMark= LatLng(arregloLugares[10].posX, arregloLugares[10].posY)
+
+    val parqueMetropolitano= LatLng(arregloLugares[11].posX, arregloLugares[11].posY)
+    val parquelasCuadras= LatLng(arregloLugares[12].posX, arregloLugares[12].posY)
+    val parqueEjido= LatLng(arregloLugares[13].posX, arregloLugares[13].posY)
+    val parqueCarolina= LatLng(arregloLugares[14].posX, arregloLugares[14].posY)
+    val parqueBicentenario= LatLng(arregloLugares[15].posX, arregloLugares[15].posY)
+
 
     val zoom = 17f
 
@@ -48,18 +75,16 @@ class GoogleMapsActivity :
 
         solicitarPermisosLocalizacion()
 
-
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
-
         mapFragment.getMapAsync(this)
+
     }
 
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
         with(googleMap) {
 
             establecerListeners(googleMap)
@@ -67,6 +92,21 @@ class GoogleMapsActivity :
 
 
             anadirMarcador(epnLatLang, "Escuela Politécnica Nacional")
+            anadirMarcador(centralLatLang, "Universidad Central")
+            anadirMarcador(uteLatLang, "Universidad Tecnológica Equinoccial")
+            anadirMarcador(udlaLatLang, "Universidad de las Américas")
+            anadirMarcador(usfqLatLang, "Universidad San Francisco de Quito")
+            anadirMarcador(multicinesRecreo, "Multicines Recreo")
+            anadirMarcador(multicinesCCI, "Multicines CCI")
+            anadirMarcador(multicinesQS, "Multicines Quicentro Shopping")
+            anadirMarcador(supercinesQS, "Supercines Quicentro Sur")
+            anadirMarcador(supercines6D, "Supercines 6 Diciembre")
+            anadirMarcador(cineMark, "Cinemark")
+            anadirMarcador(parqueMetropolitano, "Parque Metropolitano")
+            anadirMarcador(parquelasCuadras, "Parque las Cuadras")
+            anadirMarcador(parqueEjido, "Parque Ejido")
+            anadirMarcador(parqueCarolina, "Parque Carolina")
+            anadirMarcador(parqueBicentenario, "Parque Bicentenario")
 
 
             moverCamaraPorLatLongZoom(epnLatLang, zoom)
@@ -89,16 +129,13 @@ class GoogleMapsActivity :
 
     private fun establecerSettings(googleMap: GoogleMap) {
         with(googleMap) {
-            uiSettings.isZoomControlsEnabled = false
+            uiSettings.isZoomControlsEnabled = true
             uiSettings.isMyLocationButtonEnabled = true
         }
     }
 
     private fun anadirMarcador(latitudLongitud: LatLng, titulo: String) {
 
-        arregloMarcadores.forEach { marker: Marker ->
-            marker.remove()
-        }
 
         arregloMarcadores = ArrayList<Marker>()
 

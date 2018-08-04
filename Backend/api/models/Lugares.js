@@ -23,6 +23,12 @@ module.exports = {
 
     horarioAtencionLugar:{
       type: "string"
+    },
+    posX: {
+      type: "number"
+    },
+    posY: {
+      type: "number"
     }
 
   },

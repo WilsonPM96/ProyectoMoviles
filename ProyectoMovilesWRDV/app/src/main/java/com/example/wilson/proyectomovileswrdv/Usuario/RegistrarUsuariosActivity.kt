@@ -78,7 +78,7 @@ class RegistrarUsuariosActivity : AppCompatActivity() {
             if (estadoIngresoSistema==1){
                 Toast.makeText(this,"Bienvenido: $usuarioActual", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, UsuarioLoggedActivity::class.java)
-                intent.putExtra("idUsuario",usuarioActualId )
+                intent.putExtra("idUsuario",usuarioActual)
                 startActivity(intent)
             }else{
                 Toast.makeText(this,"Datos o Usuario Incorrectos", Toast.LENGTH_SHORT).show()

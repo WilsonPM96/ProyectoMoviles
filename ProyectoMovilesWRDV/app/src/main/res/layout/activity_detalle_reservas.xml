@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtShowhoraFin" />
+        app:layout_constraintTop_toBottomOf="@+id/txtShowFechaFin" />
 
     <TextView
         android:id="@+id/textView_titulo_Detalle"
@@ -36,70 +36,54 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txt_Lugar"
+        android:id="@+id/txt_Reserva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        android:text="@string/txt_id_Lugar"
+        android:text="@string/txt_id_Reserva"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtShowIdLugar"
-        app:layout_constraintEnd_toStartOf="@+id/txtShowIdLugar"
+        app:layout_constraintBottom_toBottomOf="@+id/txtShowReservaId"
+        app:layout_constraintEnd_toStartOf="@+id/txtShowReservaId"
         app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtShowIdLugar"
+        app:layout_constraintTop_toTopOf="@+id/txtShowReservaId"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/txt_Fecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/txt_fecha"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtShowfecha"
-        app:layout_constraintEnd_toStartOf="@+id/txtShowfecha"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtShowfecha"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/txt_Hora_Ini"
+        android:id="@+id/txt_Fecha_Ini"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        android:text="@string/txt_hora_ini"
+        android:text="@string/txt_fecha_ini"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtShowhoraIni"
-        app:layout_constraintEnd_toStartOf="@+id/txtShowhoraIni"
+        app:layout_constraintBottom_toBottomOf="@+id/txtShowFechaIni"
+        app:layout_constraintEnd_toStartOf="@+id/txtShowFechaIni"
         app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtShowhoraIni"
+        app:layout_constraintTop_toTopOf="@+id/txtShowFechaIni"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/txt_Hora_Fin"
+        android:id="@+id/txt_Fecha_Fin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        android:text="@string/txt_hora_fin"
+        android:text="@string/txt_fecha_fin"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtShowhoraFin"
-        app:layout_constraintEnd_toStartOf="@+id/txtShowhoraFin"
+        app:layout_constraintBottom_toBottomOf="@+id/txtShowFechaFin"
+        app:layout_constraintEnd_toStartOf="@+id/txtShowFechaFin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtShowhoraFin"
+        app:layout_constraintTop_toTopOf="@+id/txtShowFechaFin"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/txtShowIdLugar"
+        android:id="@+id/txtShowReservaId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="148dp"
@@ -111,18 +95,18 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_titulo_Detalle" />
 
     <TextView
-        android:id="@+id/txtShowfecha"
+        android:id="@+id/txtShowFechaIni"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="152dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtShowIdLugar" />
+        app:layout_constraintTop_toBottomOf="@+id/txtShowReservaId" />
 
     <TextView
-        android:id="@+id/txtShowhoraIni"
+        android:id="@+id/txtShowFechaFin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="152dp"
@@ -130,23 +114,12 @@
         android:text="TextView"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtShowfecha" />
-
-    <TextView
-        android:id="@+id/txtShowhoraFin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="152dp"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtShowhoraIni" />
+        app:layout_constraintTop_toBottomOf="@+id/txtShowFechaIni" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_detalle_reservas"
         android:layout_width="0dp"
-        android:layout_height="258dp"
+        android:layout_height="310dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -159,7 +132,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/txtShowReservaId"
+        android:id="@+id/txtShowUsuarioId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"

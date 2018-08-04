@@ -20,11 +20,11 @@ class BaseDatosDetalleReservas {
                 }
     }*/
 
-    fun getListofDetallesReservas(): ArrayList<DetalleReservas> {
+    fun getListofDetallesReservas(idReserva: Int): ArrayList<DetalleReservas> {
         val detalleReservas: ArrayList<DetalleReservas> = ArrayList()
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
-        val (request, response, result) = "http://172.29.64.146:1337/DetalleReserva".httpGet().responseString()
+        val (request, response, result) = "http://192.168.100.189:1337/DetalleReserva?idReserva=$idReserva".httpGet().responseString()
         val jsonStringDetalleReservas = result.get()
 
         val parser = Parser()
