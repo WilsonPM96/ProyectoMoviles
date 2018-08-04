@@ -131,6 +131,8 @@ class GoogleMapsActivity :
         with(googleMap) {
             uiSettings.isZoomControlsEnabled = true
             uiSettings.isMyLocationButtonEnabled = true
+            uiSettings.isZoomGesturesEnabled = true
+            uiSettings.isCompassEnabled = true
         }
     }
 
@@ -214,6 +216,30 @@ class GoogleMapsActivity :
             10 -> if (resultCode == Activity.RESULT_OK){
                 val result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
                 txtBuscarLugar.setText(result.get(0))
+
+                when{
+                    txtBuscarLugar.text.contains("escuela politecnica nacional") -> moverCamaraPorLatLongZoom(epnLatLang, zoom)
+                    txtBuscarLugar.text.contains("epn") -> moverCamaraPorLatLongZoom(epnLatLang, zoom)
+                    txtBuscarLugar.text.contains("universidad central") -> moverCamaraPorLatLongZoom(centralLatLang, zoom)
+                    txtBuscarLugar.text.contains("uce") -> moverCamaraPorLatLongZoom(centralLatLang, zoom)
+                    txtBuscarLugar.text.contains("universidad tecnologica equinoccional") -> moverCamaraPorLatLongZoom(uteLatLang, zoom)
+                    txtBuscarLugar.text.contains("ute") -> moverCamaraPorLatLongZoom(uteLatLang, zoom)
+                    txtBuscarLugar.text.contains("universidad de las americas") -> moverCamaraPorLatLongZoom(udlaLatLang, zoom)
+                    txtBuscarLugar.text.contains("udla") -> moverCamaraPorLatLongZoom(udlaLatLang, zoom)
+                    txtBuscarLugar.text.contains("universidad san francisco") -> moverCamaraPorLatLongZoom(usfqLatLang, zoom)
+                    txtBuscarLugar.text.contains("usfq") -> moverCamaraPorLatLongZoom(usfqLatLang, zoom)
+                    txtBuscarLugar.text.contains("multicines recreo") -> moverCamaraPorLatLongZoom(multicinesRecreo, zoom)
+                    txtBuscarLugar.text.contains("multicines cci") -> moverCamaraPorLatLongZoom(multicinesCCI, zoom)
+                    txtBuscarLugar.text.contains("multicines quicentro") -> moverCamaraPorLatLongZoom(multicinesQS, zoom)
+                    txtBuscarLugar.text.contains("supercines quicentro") -> moverCamaraPorLatLongZoom(supercinesQS, zoom)
+                    txtBuscarLugar.text.contains("supercines seis de diciembre") -> moverCamaraPorLatLongZoom(supercines6D, zoom)
+                    txtBuscarLugar.text.contains("cinemark") -> moverCamaraPorLatLongZoom(cineMark, zoom)
+                    txtBuscarLugar.text.contains("parque metropolitano") -> moverCamaraPorLatLongZoom(parqueMetropolitano, zoom)
+                    txtBuscarLugar.text.contains("parque las cuadras") -> moverCamaraPorLatLongZoom(parquelasCuadras, zoom)
+                    txtBuscarLugar.text.contains("parque ejido") -> moverCamaraPorLatLongZoom(parqueEjido, zoom)
+                    txtBuscarLugar.text.contains("parque carolina") -> moverCamaraPorLatLongZoom(parqueCarolina, zoom)
+                    txtBuscarLugar.text.contains("parque bicentenario") -> moverCamaraPorLatLongZoom(parqueBicentenario, zoom)
+                }
 
             }
         }
