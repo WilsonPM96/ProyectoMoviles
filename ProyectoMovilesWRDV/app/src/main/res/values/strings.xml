@@ -19,6 +19,7 @@
     <string name="password">Contraseña</string>
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>
+    <string name="compartir">Compartir</string>
     <string name="txt_lista_reservas">Lista Reservas</string>
     <string name="txt_detalles_reserva">Detalles Reserva</string>
     <string name="txt_id_Reserva">Id Reserva</string>
@@ -28,7 +29,40 @@
     <string name="txt_id_Lugar">Id Lugar</string>
     <string name="txt_hora_ini">Hora de Inicio</string>
     <string name="txt_hora_fin">Hora de Fin</string>
-    <string name="btn_buscarporvoz">Buscar Por Voz</string>
+    <string name="txt_TituloReserva">Reservar</string>
+    <string name="txt_RidLugar">Id Lugar</string>
+    <string name="txt_RidUsuario">Id Usuario</string>
+    <string name="txt_RFechaIni">Fecha Inicio</string>
+    <string name="txt_RFechaFin">Fecha Fin</string>
+    <string name="txt_RHoraIni">Hora Inicio</string>
+    <string name="txt_RHoraFin">Hora Fin</string>
+    <string name="txt_REstado">Estado</string>
+    <string name="editText_RidLugar">Id Lugar</string>
+    <string name="editText_RidUsuario">Id Usuario</string>
+    <string name="fechaini_hint">Fecha Inicio</string>
+    <string name="fechafin_hint">Fecha Fin</string>
+    <string name="horaini_hint">Hora Inicio</string>
+    <string name="horafin_hint">Hora Fin</string>
+    <string name="switch_Label">Reservado</string>
+    <string name="btn_HacerReserva">Hacer Reserva</string>
+
+    <string name="txt_ETituloReserva">Editar Reserva</string>
+    <string name="txt_ERidLugar">Id Lugar</string>
+    <string name="txt_ERidUsuario">Id Usuario</string>
+    <string name="txt_ERFechaIni">Fecha Inicio</string>
+    <string name="txt_ERFechaFin">Fecha Fin</string>
+    <string name="txt_ERHoraIni">Hora Inicio</string>
+    <string name="txt_ERHoraFin">Hora Fin</string>
+    <string name="txt_EREstado">Estado</string>
+    <string name="editText_ERidLugar">Id Lugar</string>
+    <string name="editText_ERidUsuario">Id Usuario</string>
+    <string name="fechaini_Ehint">Fecha Inicio</string>
+    <string name="fechafin_Ehint">Fecha Fin</string>
+    <string name="horaini_Ehint">Hora Inicio</string>
+    <string name="horafin_Ehint">Hora Fin</string>
+    <string name="switch_ELabel">Reservado</string>
+    <string name="btn_EHacerReserva">Guardar Cambios</string>
+
 
     <string name="title_activity_google_maps">Reserva</string>
 </resources>

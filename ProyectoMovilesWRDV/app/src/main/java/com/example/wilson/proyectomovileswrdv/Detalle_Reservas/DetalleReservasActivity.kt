@@ -1,9 +1,13 @@
 package com.example.wilson.proyectomovileswrdv.Detalle_Reservas
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
+import android.view.MenuItem
 import com.example.wilson.proyectomovileswrdv.R
 import com.example.wilson.proyectomovileswrdv.Reservas.Reservas
 import kotlinx.android.synthetic.main.activity_detalle_reservas.*
@@ -30,8 +34,8 @@ class DetalleReservasActivity : AppCompatActivity() {
         recycler_view_detalle_reservas.adapter = adaptador
         adaptador.notifyDataSetChanged()
 
-        registerForContextMenu(recycler_view_detalle_reservas)
 
 
     }
+
 }

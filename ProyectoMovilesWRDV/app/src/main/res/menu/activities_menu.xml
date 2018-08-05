@@ -3,6 +3,9 @@
 
 
     <item
+        android:id="@+id/item_menu_compartir"
+        android:title="@string/compartir" />
+    <item
         android:id="@+id/item_menu_editar"
         android:title="@string/editar" />
     <item

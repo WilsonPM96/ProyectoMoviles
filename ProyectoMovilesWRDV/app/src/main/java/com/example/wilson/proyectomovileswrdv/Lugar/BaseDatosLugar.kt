@@ -13,20 +13,13 @@ class BaseDatosLugar {
 
     companion object {
 
-        fun insertarLugares(lugares: Array<Lugar?>){
-            for (i in lugares.indices) {
-                "http://172.29.65.18:1337/Lugares".httpPost(listOf("idLugar" to lugares[i]?.idLugar, "tipoLugar" to lugares[i]?.tipoLugar, "ubicacionLugar" to lugares[i]?.ubicacionLugar, "horarioAtencionLugar" to lugares[i]?.horarioAtencionLugar, "posX" to lugares[i]?.posX, "posY" to lugares[i]?.posY))
-                        .responseString { request, _, result ->
-                            Log.d("http-ejemplo", request.toString())
-                        }
-            }
-        }
+
 
         fun getListofLugares(): ArrayList<Lugar> {
             val lugares: ArrayList<Lugar> = ArrayList()
             val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
             StrictMode.setThreadPolicy(policy)
-            val (request, response, result) = "http://172.29.65.18:1337/Lugares".httpGet().responseString()
+            val (request, response, result) = "http://192.168.100.189:1337/Lugares".httpGet().responseString()
             val jsonStringLugar = result.get()
 
             val parser = Parser()

@@ -12,6 +12,8 @@ import android.view.View
 import android.widget.Toast
 import com.example.wilson.proyectomovileswrdv.Lugar.BaseDatosLugar
 import com.example.wilson.proyectomovileswrdv.Lugar.Lugar
+import com.example.wilson.proyectomovileswrdv.Reservas.CrearReservaActivity
+import com.example.wilson.proyectomovileswrdv.Usuario.Usuario
 import com.google.android.gms.maps.*
 
 import com.google.android.gms.maps.model.*
@@ -25,16 +27,16 @@ class GoogleMapsActivity :
         GoogleMap.OnCameraMoveStartedListener,
         GoogleMap.OnCameraMoveListener,
         GoogleMap.OnCameraMoveCanceledListener,
-        GoogleMap.OnCameraIdleListener{
-
+        GoogleMap.OnCameraIdleListener,
+        GoogleMap.OnMarkerClickListener{
 
     private lateinit var mMap: GoogleMap
 
-
-
+    var usuario: Usuario? = null
     var arregloLugares : ArrayList<Lugar> = BaseDatosLugar.getListofLugares()
-    var arregloMarcadores = ArrayList<Marker>()
-
+    var arregloMarcadoresU = ArrayList<Marker>()
+    var arregloMarcadoresC = ArrayList<Marker>()
+    var arregloMarcadoresP = ArrayList<Marker>()
 
 
     val epnLatLang = LatLng(arregloLugares[1].posX, arregloLugares[1].posY)
@@ -56,15 +58,7 @@ class GoogleMapsActivity :
     val parqueCarolina= LatLng(arregloLugares[14].posX, arregloLugares[14].posY)
     val parqueBicentenario= LatLng(arregloLugares[15].posX, arregloLugares[15].posY)
 
-
     val zoom = 17f
-
-    val clienteLatLang = LatLng(-0.260784, -78.538662)
-    val cliente: CameraPosition = CameraPosition
-            .Builder()
-            .target(clienteLatLang)
-            .zoom(zoom)
-            .build()
 
 
     var usuarioTienePermisosLocalizacion = false;
@@ -72,7 +66,7 @@ class GoogleMapsActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_google_maps)
-
+        usuario = intent.getParcelableExtra("idUsuario")
         solicitarPermisosLocalizacion()
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -91,22 +85,22 @@ class GoogleMapsActivity :
             establecerSettings(googleMap)
 
 
-            anadirMarcador(epnLatLang, "Escuela Politécnica Nacional")
-            anadirMarcador(centralLatLang, "Universidad Central")
-            anadirMarcador(uteLatLang, "Universidad Tecnológica Equinoccial")
-            anadirMarcador(udlaLatLang, "Universidad de las Américas")
-            anadirMarcador(usfqLatLang, "Universidad San Francisco de Quito")
-            anadirMarcador(multicinesRecreo, "Multicines Recreo")
-            anadirMarcador(multicinesCCI, "Multicines CCI")
-            anadirMarcador(multicinesQS, "Multicines Quicentro Shopping")
-            anadirMarcador(supercinesQS, "Supercines Quicentro Sur")
-            anadirMarcador(supercines6D, "Supercines 6 Diciembre")
-            anadirMarcador(cineMark, "Cinemark")
-            anadirMarcador(parqueMetropolitano, "Parque Metropolitano")
-            anadirMarcador(parquelasCuadras, "Parque las Cuadras")
-            anadirMarcador(parqueEjido, "Parque Ejido")
-            anadirMarcador(parqueCarolina, "Parque Carolina")
-            anadirMarcador(parqueBicentenario, "Parque Bicentenario")
+            anadirMarcadorUniversidad(epnLatLang, "Escuela Politécnica Nacional")
+            anadirMarcadorUniversidad(centralLatLang, "Universidad Central")
+            anadirMarcadorUniversidad(uteLatLang, "Universidad Tecnológica Equinoccial")
+            anadirMarcadorUniversidad(udlaLatLang, "Universidad de las Américas")
+            anadirMarcadorUniversidad(usfqLatLang, "Universidad San Francisco de Quito")
+            anadirMarcadorCine(multicinesRecreo, "Multicines Recreo")
+            anadirMarcadorCine(multicinesCCI, "Multicines CCI")
+            anadirMarcadorCine(multicinesQS, "Multicines Quicentro Shopping")
+            anadirMarcadorCine(supercinesQS, "Supercines Quicentro Sur")
+            anadirMarcadorCine(supercines6D, "Supercines 6 Diciembre")
+            anadirMarcadorCine(cineMark, "Cinemark")
+            anadirMarcadorParque(parqueMetropolitano, "Parque Metropolitano")
+            anadirMarcadorParque(parquelasCuadras, "Parque las Cuadras")
+            anadirMarcadorParque(parqueEjido, "Parque Ejido")
+            anadirMarcadorParque(parqueCarolina, "Parque Carolina")
+            anadirMarcadorParque(parqueBicentenario, "Parque Bicentenario")
 
 
             moverCamaraPorLatLongZoom(epnLatLang, zoom)
@@ -114,8 +108,12 @@ class GoogleMapsActivity :
                 v:  View? -> getSpeechInput(v)
             }
 
+
+
         }
     }
+
+
 
     fun solicitarPermisosLocalizacion() {
         if (ContextCompat.checkSelfPermission(this.applicationContext,
@@ -133,23 +131,62 @@ class GoogleMapsActivity :
             uiSettings.isMyLocationButtonEnabled = true
             uiSettings.isZoomGesturesEnabled = true
             uiSettings.isCompassEnabled = true
+            uiSettings.isRotateGesturesEnabled = true
         }
     }
 
-    private fun anadirMarcador(latitudLongitud: LatLng, titulo: String) {
+    private fun anadirMarcadorUniversidad(latitudLongitud: LatLng, titulo: String) {
 
 
-        arregloMarcadores = ArrayList<Marker>()
+        arregloMarcadoresU = ArrayList<Marker>()
+
 
         val marker = mMap.addMarker(
                 MarkerOptions()
                         .position(latitudLongitud)
                         .title(titulo)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
 
-        arregloMarcadores.add(marker)
+        arregloMarcadoresU.add(marker)
 
-        Log.i("google-map", "$arregloMarcadores")
+        Log.i("google-map", "$arregloMarcadoresU")
+    }
+
+    private fun anadirMarcadorCine(latitudLongitud: LatLng, titulo: String) {
+
+
+        arregloMarcadoresC = ArrayList<Marker>()
+
+
+        val marker = mMap.addMarker(
+                MarkerOptions()
+                        .position(latitudLongitud)
+                        .title(titulo)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+        )
+
+        arregloMarcadoresC.add(marker)
+
+        Log.i("google-map", "$arregloMarcadoresC")
+    }
+
+    private fun anadirMarcadorParque(latitudLongitud: LatLng, titulo: String) {
+
+
+        arregloMarcadoresP = ArrayList<Marker>()
+
+
+        val marker = mMap.addMarker(
+                MarkerOptions()
+                        .position(latitudLongitud)
+                        .title(titulo)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+        )
+
+        arregloMarcadoresP.add(marker)
+
+        Log.i("google-map", "$arregloMarcadoresP")
     }
 
 
@@ -180,6 +217,7 @@ class GoogleMapsActivity :
             setOnCameraMoveStartedListener(this@GoogleMapsActivity)
             setOnCameraMoveListener(this@GoogleMapsActivity)
             setOnCameraMoveCanceledListener(this@GoogleMapsActivity)
+            setOnMarkerClickListener(this@GoogleMapsActivity)
         }
     }
 
@@ -195,6 +233,37 @@ class GoogleMapsActivity :
     }
 
     override fun onCameraIdle() {
+    }
+
+    override fun onMarkerClick(p0: Marker?): Boolean {
+        var pos = 0
+        val intent= Intent(this, CrearReservaActivity::class.java)
+
+        when{
+            p0?.title.equals("Escuela Politécnica Nacional") -> pos=1
+            p0?.title.equals("Universidad Central") -> pos=8
+            p0?.title.equals("Universidad Tecnológica Equinoccial") -> pos=2
+            p0?.title.equals("Universidad de las Américas") -> pos=3
+            p0?.title.equals("Universidad San Francisco de Quito") -> pos=4
+
+            p0?.title.equals("Multicines Recreo") -> pos=5
+            p0?.title.equals("Multicines CCI") -> pos=6
+            p0?.title.equals("Multicines Quicentro Shopping") -> pos=7
+            p0?.title.equals("Supercines Quicentro Sur") -> pos=0
+            p0?.title.equals("Supercines 6 Diciembre") -> pos=9
+            p0?.title.equals("Cinemark") -> pos=10
+
+            p0?.title.equals("Parque Metropolitano") -> pos=11
+            p0?.title.equals("Parque las Cuadras") -> pos=12
+            p0?.title.equals("Parque Ejido") -> pos=13
+            p0?.title.equals("Parque Carolina") -> pos=14
+            p0?.title.equals("Parque Bicentenario") -> pos=15
+        }
+
+        intent.putExtra("idLugar", arregloLugares[pos])
+        intent.putExtra("idUsuario", usuario)
+        startActivity(intent)
+        return true
     }
 
     fun getSpeechInput (view: View?){
@@ -216,29 +285,33 @@ class GoogleMapsActivity :
             10 -> if (resultCode == Activity.RESULT_OK){
                 val result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
                 txtBuscarLugar.setText(result.get(0))
+                Toast.makeText(this, "Buscando "+txtBuscarLugar.text, Toast.LENGTH_SHORT).show()
 
                 when{
-                    txtBuscarLugar.text.contains("escuela politecnica nacional") -> moverCamaraPorLatLongZoom(epnLatLang, zoom)
+                    txtBuscarLugar.text.contains("escuela politécnica nacional") -> moverCamaraPorLatLongZoom(epnLatLang, zoom)
                     txtBuscarLugar.text.contains("epn") -> moverCamaraPorLatLongZoom(epnLatLang, zoom)
                     txtBuscarLugar.text.contains("universidad central") -> moverCamaraPorLatLongZoom(centralLatLang, zoom)
-                    txtBuscarLugar.text.contains("uce") -> moverCamaraPorLatLongZoom(centralLatLang, zoom)
-                    txtBuscarLugar.text.contains("universidad tecnologica equinoccional") -> moverCamaraPorLatLongZoom(uteLatLang, zoom)
+                    txtBuscarLugar.text.contains("use") -> moverCamaraPorLatLongZoom(centralLatLang, zoom)
+                    txtBuscarLugar.text.contains("universidad tecnológica equinoccional") -> moverCamaraPorLatLongZoom(uteLatLang, zoom)
                     txtBuscarLugar.text.contains("ute") -> moverCamaraPorLatLongZoom(uteLatLang, zoom)
-                    txtBuscarLugar.text.contains("universidad de las americas") -> moverCamaraPorLatLongZoom(udlaLatLang, zoom)
+                    txtBuscarLugar.text.contains("Universidad de las Américas") -> moverCamaraPorLatLongZoom(udlaLatLang, zoom)
                     txtBuscarLugar.text.contains("udla") -> moverCamaraPorLatLongZoom(udlaLatLang, zoom)
-                    txtBuscarLugar.text.contains("universidad san francisco") -> moverCamaraPorLatLongZoom(usfqLatLang, zoom)
+                    txtBuscarLugar.text.contains("universidad San Francisco") -> moverCamaraPorLatLongZoom(usfqLatLang, zoom)
                     txtBuscarLugar.text.contains("usfq") -> moverCamaraPorLatLongZoom(usfqLatLang, zoom)
                     txtBuscarLugar.text.contains("multicines recreo") -> moverCamaraPorLatLongZoom(multicinesRecreo, zoom)
-                    txtBuscarLugar.text.contains("multicines cci") -> moverCamaraPorLatLongZoom(multicinesCCI, zoom)
+                    txtBuscarLugar.text.contains("multicines cc") -> moverCamaraPorLatLongZoom(multicinesCCI, zoom)
                     txtBuscarLugar.text.contains("multicines quicentro") -> moverCamaraPorLatLongZoom(multicinesQS, zoom)
                     txtBuscarLugar.text.contains("supercines quicentro") -> moverCamaraPorLatLongZoom(supercinesQS, zoom)
-                    txtBuscarLugar.text.contains("supercines seis de diciembre") -> moverCamaraPorLatLongZoom(supercines6D, zoom)
-                    txtBuscarLugar.text.contains("cinemark") -> moverCamaraPorLatLongZoom(cineMark, zoom)
-                    txtBuscarLugar.text.contains("parque metropolitano") -> moverCamaraPorLatLongZoom(parqueMetropolitano, zoom)
-                    txtBuscarLugar.text.contains("parque las cuadras") -> moverCamaraPorLatLongZoom(parquelasCuadras, zoom)
-                    txtBuscarLugar.text.contains("parque ejido") -> moverCamaraPorLatLongZoom(parqueEjido, zoom)
-                    txtBuscarLugar.text.contains("parque carolina") -> moverCamaraPorLatLongZoom(parqueCarolina, zoom)
-                    txtBuscarLugar.text.contains("parque bicentenario") -> moverCamaraPorLatLongZoom(parqueBicentenario, zoom)
+                    txtBuscarLugar.text.contains("supercines 6 de diciembre") -> moverCamaraPorLatLongZoom(supercines6D, zoom)
+                    txtBuscarLugar.text.contains("Cinemark") -> moverCamaraPorLatLongZoom(cineMark, zoom)
+                    txtBuscarLugar.text.contains("parque Metropolitano") -> moverCamaraPorLatLongZoom(parqueMetropolitano, zoom)
+                    txtBuscarLugar.text.contains("parque Las cuadras") -> moverCamaraPorLatLongZoom(parquelasCuadras, zoom)
+                    txtBuscarLugar.text.contains("parque Ejido") -> moverCamaraPorLatLongZoom(parqueEjido, zoom)
+                    txtBuscarLugar.text.contains("parque Carolina") -> moverCamaraPorLatLongZoom(parqueCarolina, zoom)
+                    txtBuscarLugar.text.contains("Parque Bicentenario") -> moverCamaraPorLatLongZoom(parqueBicentenario, zoom)
+                    txtBuscarLugar.text.contains("Buscar universidad") -> arregloMarcadoresU
+                    txtBuscarLugar.text.contains("Buscar cine") -> arregloMarcadoresC
+                    txtBuscarLugar.text.contains("Buscar parque") -> arregloMarcadoresP
                 }
 
             }

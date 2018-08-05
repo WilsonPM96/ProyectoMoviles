@@ -6,15 +6,28 @@ import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import com.beust.klaxon.Parser
 import com.example.wilson.proyectomovileswrdv.Usuario.Usuario
-import com.github.kittinunf.fuel.httpGet
-import com.github.kittinunf.fuel.httpPost
+import com.github.kittinunf.fuel.*
 import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
 
 class BaseDatosReservas {
     companion object {
 
         fun insertarReserva(reserva: Reservas) {
-            "http://192.168.100.189:1337/Reservas".httpPost(listOf("idReserva" to reserva.idReserva,"fecha_ini" to reserva.fecha_ini, "fecha_fin" to reserva.fecha_fin, "idUsuario" to reserva.idUsuario))
+            "http://192.168.100.189:1337/Reservas".httpPost(listOf("idUsuario" to reserva.idUsuario, "idReserva" to reserva.idReserva,"fecha_ini" to reserva.fecha_ini, "fecha_fin" to reserva.fecha_fin))
+                    .responseString { request, _, result ->
+                        Log.d("http-ejemplo", request.toString())
+                    }
+        }
+
+        fun eliminarReserva(id: Int) {
+            "http://192.168.100.189:1337/Reservas/$id".httpDelete()
+                    .responseString { request, response, result ->
+                        Log.d("http-ejemplo", request.toString())
+                    }
+        }
+
+        fun actualizarReserva(reserva: Reservas) {
+            "http://192.168.100.189:1337/Reservas?idReserva=${reserva.idReserva}".httpPatch(listOf("idUsuario" to reserva.idUsuario, "idReserva" to reserva.idReserva,"fecha_ini" to reserva.fecha_ini, "fecha_fin" to reserva.fecha_fin))
                     .responseString { request, _, result ->
                         Log.d("http-ejemplo", request.toString())
                     }
@@ -24,7 +37,7 @@ class BaseDatosReservas {
             val reservas: ArrayList<Reservas> = ArrayList()
             val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
             StrictMode.setThreadPolicy(policy)
-            val (request, response, result) = "http://172.29.65.18:1337/Reservas?idUsuario=$idUsuario".httpGet().responseString()
+            val (request, response, result) = "http://192.168.100.189:1337/Reservas?idUsuario=$idUsuario".httpGet().responseString()
             val jsonStringReservas = result.get()
 
             val parser = Parser()
@@ -32,11 +45,12 @@ class BaseDatosReservas {
             val array = parser.parse(stringBuilder) as JsonArray<JsonObject>
 
             array.forEach {
+                val id = it ["id"] as Int
                 val idReserva = it["idReserva"] as Int
                 val fecha_ini = it["fecha_ini"] as String
                 val fecha_fin = it["fecha_fin"] as String
                 val idUsuario = it ["idUsuario"] as Int
-                val reserva = Reservas(idReserva, fecha_ini, fecha_fin,  0, 0, idUsuario)
+                val reserva = Reservas(id, idUsuario, idReserva, fecha_ini, fecha_fin,  0, 0)
                 reservas.add(reserva)
             }
             return reservas

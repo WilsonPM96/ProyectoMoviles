@@ -37,7 +37,9 @@
             android:label="@string/title_activity_google_maps" />
         <activity android:name=".Usuario.UsuarioLoggedActivity" />
         <activity android:name=".Reservas.ReservasUsuarioActivity" />
-        <activity android:name=".Detalle_Reservas.DetalleReservasActivity"></activity>
+        <activity android:name=".Detalle_Reservas.DetalleReservasActivity" />
+        <activity android:name=".Reservas.CrearReservaActivity" />
+        <activity android:name=".Reservas.EditarReservaActivity"></activity>
     </application>
 
 </manifest>

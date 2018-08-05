@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Reservas.EditarReservaActivity">
+
+    <TextView
+        android:id="@+id/txt_ETituloReserva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/txt_ETituloReserva"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_ERIdLugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="56dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/txt_ERidLugar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_ETituloReserva" />
+
+    <TextView
+        android:id="@+id/txt_ERIdUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/txt_ERidUsuario"
+        app:layout_constraintEnd_toEndOf="@+id/txt_ERIdLugar"
+        app:layout_constraintStart_toStartOf="@+id/txt_ERIdLugar"
+        app:layout_constraintTop_toBottomOf="@+id/txt_ERIdLugar" />
+
+    <TextView
+        android:id="@+id/editTextERidUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/editText_ERidUsuario"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_ERIdUsuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_ERIdUsuario"
+        app:layout_constraintTop_toTopOf="@+id/txt_ERIdUsuario" />
+
+    <TextView
+        android:id="@+id/editTextERidLugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/editText_ERidLugar"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_ERIdLugar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toEndOf="@+id/txt_ERIdLugar"
+        app:layout_constraintTop_toTopOf="@+id/txt_ERIdLugar" />
+
+    <TextView
+        android:id="@+id/txt_REFechaIni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/txt_ERFechaIni"
+        app:layout_constraintEnd_toEndOf="@+id/txt_ERIdUsuario"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/txt_ERIdUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/txt_ERIdUsuario" />
+
+    <TextView
+        android:id="@+id/txt_REFechaFin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/txt_ERFechaFin"
+        app:layout_constraintEnd_toEndOf="@+id/txt_REFechaIni"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_REFechaIni"
+        app:layout_constraintTop_toBottomOf="@+id/txt_REFechaIni" />
+
+    <TextView
+        android:id="@+id/txt_REHoraIni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/txt_ERHoraIni"
+        app:layout_constraintEnd_toEndOf="@+id/txt_REFechaFin"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_REFechaFin"
+        app:layout_constraintTop_toBottomOf="@+id/txt_REFechaFin" />
+
+    <TextView
+        android:id="@+id/txt_REHora_Fin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/txt_ERHoraFin"
+        app:layout_constraintEnd_toEndOf="@+id/txt_REHoraIni"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_REHoraIni"
+        app:layout_constraintTop_toBottomOf="@+id/txt_REHoraIni" />
+
+    <TextView
+        android:id="@+id/txt_REEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/txt_EREstado"
+        app:layout_constraintEnd_toEndOf="@+id/txt_REHora_Fin"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_REHora_Fin"
+        app:layout_constraintTop_toBottomOf="@+id/txt_REHora_Fin" />
+
+    <Switch
+        android:id="@+id/switchEEstadoReserva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:checked="false"
+        android:text="@string/switch_ELabel"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_REEstado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_REEstado"
+        app:layout_constraintTop_toTopOf="@+id/txt_REEstado"
+        tools:checked="false" />
+
+    <EditText
+        android:id="@+id/editTextEFechaIni"
+        android:layout_width="148dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/fechaini_Ehint"
+        android:inputType="date"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_REFechaIni"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toEndOf="@+id/txt_REFechaIni"
+        app:layout_constraintTop_toTopOf="@+id/txt_REFechaIni"
+        app:layout_constraintVertical_bias="0.625" />
+
+    <EditText
+        android:id="@+id/editTextEFechaFin"
+        android:layout_width="148dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/fechafin_Ehint"
+        android:inputType="date"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_REFechaFin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toEndOf="@+id/txt_REFechaFin"
+        app:layout_constraintTop_toTopOf="@+id/txt_REFechaFin"
+        app:layout_constraintVertical_bias="0.625" />
+
+    <EditText
+        android:id="@+id/editTextEHoraIni"
+        android:layout_width="148dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/horaini_Ehint"
+        android:inputType="time"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_REHoraIni"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toEndOf="@+id/txt_REHoraIni"
+        app:layout_constraintTop_toTopOf="@+id/txt_REHoraIni"
+        app:layout_constraintVertical_bias="0.708" />
+
+    <EditText
+        android:id="@+id/editTextEHoraFin"
+        android:layout_width="148dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/horafin_Ehint"
+        android:inputType="time"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_REHora_Fin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_REHora_Fin"
+        app:layout_constraintTop_toTopOf="@+id/txt_REHora_Fin" />
+
+    <Button
+        android:id="@+id/btn_guardarCambios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:background="@android:color/holo_red_dark"
+        android:text="@string/btn_EHacerReserva"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_REEstado"
+        app:layout_constraintVertical_bias="0.0" />
+</android.support.constraint.ConstraintLayout>

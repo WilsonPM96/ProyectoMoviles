@@ -14,8 +14,8 @@ class RegistrarUsuariosActivity : AppCompatActivity() {
 
     lateinit var usuarios: ArrayList<Usuario>
     var estadoIngresoSistema = 0
-    lateinit var usuarioActual:String
-    var usuarioActualId = 0
+    lateinit var usuarioActual: Usuario
+    lateinit var usuarioActualNombre: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar_usuarios)
@@ -46,8 +46,9 @@ class RegistrarUsuariosActivity : AppCompatActivity() {
             else {
                 BaseDatosUsuario.insertarUsuario(usuario)
                 Toast.makeText(this,"Usuario Registrado con Exito", Toast.LENGTH_SHORT).show()
-                usuarioActual = datos.username
+                usuarioActual = usuario
                 val intent = Intent(this, UsuarioLoggedActivity::class.java)
+                intent.putExtra("idUsuario", usuarioActual)
                 startActivity(intent)
 
             }
@@ -68,15 +69,16 @@ class RegistrarUsuariosActivity : AppCompatActivity() {
 
                 if (datos.username.equals(usernameUsuario,true) && datos.password.equals(passwordUsuario,true)){
                     estadoIngresoSistema = 1
-                    usuarioActual = datos.username
-                    usuarioActualId = datos.idUsuario
+                    usuarioActualNombre = datos.username
+                    usuarioActual = datos
+
                 }
 
             }
 
 
             if (estadoIngresoSistema==1){
-                Toast.makeText(this,"Bienvenido: $usuarioActual", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Bienvenido: $usuarioActualNombre", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, UsuarioLoggedActivity::class.java)
                 intent.putExtra("idUsuario",usuarioActual)
                 startActivity(intent)

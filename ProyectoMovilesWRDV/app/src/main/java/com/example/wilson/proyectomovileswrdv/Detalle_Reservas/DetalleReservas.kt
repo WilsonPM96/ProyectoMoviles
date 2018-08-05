@@ -4,12 +4,12 @@ import android.os.Parcel
 import android.os.Parcelable
 
 
-class DetalleReservas(var idReserva: Int, var idLugar: Int, var fecha: String, var estado: Int, var hora_ini: String, var hora_fin: String, var createdAt: Long, var updatedAt: Long) : Parcelable {
+class DetalleReservas(var idReserva: Int, var idLugar: Int,  var estado: Int, var fecha: String, var hora_ini: String, var hora_fin: String, var createdAt: Long, var updatedAt: Long) : Parcelable {
     constructor(parcel: Parcel) : this(
             parcel.readInt(),
             parcel.readInt(),
-            parcel.readString(),
             parcel.readInt(),
+            parcel.readString(),
             parcel.readString(),
             parcel.readString(),
             parcel.readLong(),
@@ -20,8 +20,8 @@ class DetalleReservas(var idReserva: Int, var idLugar: Int, var fecha: String, v
     override fun writeToParcel(parcel: Parcel, flags: Int){
         parcel.writeInt(idReserva)
         parcel.writeInt(idLugar)
-        parcel.writeString(fecha)
         parcel.writeInt(estado)
+        parcel.writeString(fecha)
         parcel.writeString(hora_ini)
         parcel.writeString(hora_fin)
         parcel.writeLong(createdAt)

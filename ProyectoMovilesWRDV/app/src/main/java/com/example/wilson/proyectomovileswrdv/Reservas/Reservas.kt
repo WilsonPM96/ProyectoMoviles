@@ -3,23 +3,26 @@ package com.example.wilson.proyectomovileswrdv.Reservas
 import android.os.Parcel
 import android.os.Parcelable
 
-class Reservas(var idReserva: Int, var fecha_ini: String, var fecha_fin: String, var createdAt: Long, var updatedAt: Long, var idUsuario: Int) : Parcelable {
+class Reservas(var id: Int, var idUsuario: Int, var idReserva: Int, var fecha_ini: String, var fecha_fin: String, var createdAt: Long, var updatedAt: Long) : Parcelable {
     constructor(parcel: Parcel) : this(
+            parcel.readInt(),
+            parcel.readInt(),
             parcel.readInt(),
             parcel.readString(),
             parcel.readString(),
             parcel.readLong(),
-            parcel.readLong(),
-            parcel.readInt()
+            parcel.readLong()
+
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int){
+        parcel.writeInt(id)
+        parcel.writeInt(idUsuario)
         parcel.writeInt(idReserva)
         parcel.writeString(fecha_ini)
         parcel.writeString(fecha_fin)
         parcel.writeLong(createdAt)
         parcel.writeLong(updatedAt)
-        parcel.writeInt(idUsuario)
     }
 
     override fun describeContents(): Int {
