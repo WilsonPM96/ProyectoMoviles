@@ -62,4 +62,18 @@
     <string name="horafin_Ehint">Ending Time</string>
     <string name="switch_ELabel">Reserved</string>
     <string name="btn_EHacerReserva">Save Changes</string>
+    <string name="compartir">Share Via Email</string>
+    <string name="compartir_telefono">Share Via Cellphone</string>
+    <string name="txt_TituloT">Share Via Cellphone</string>
+    <string name="txt_nombreContacto">Contact Name</string>
+    <string name="txt_numeroContacto">Contact Number</string>
+    <string name="txt_horainiT">Start Time</string>
+    <string name="txt_horafinT">Ending Time</string>
+    <string name="txt_reservaIdT">Reservation ID</string>
+    <string name="button_invitarT">Send Invitation</string>
+    <string name="editText_nombreContacto">Contact Name</string>
+    <string name="editText_numeroContacto">Contact Number</string>
+    <string name="editText_horainiT">Start Time</string>
+    <string name="editText_horafinT">Ending Time</string>
+    <string name="editText_reservaIdT">Reservation ID</string>
 </resources>

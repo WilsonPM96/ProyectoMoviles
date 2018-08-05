@@ -36,6 +36,7 @@ class CrearReservaActivity : AppCompatActivity()  {
     }
 
     fun registrarDetalleReserva(){
+        val id = 0
         val random = Random()
         val idLugar = editTextRidLugar.text.toString().toInt()
         val horaIni= editTextHoraIni.text.toString()
@@ -43,21 +44,13 @@ class CrearReservaActivity : AppCompatActivity()  {
         val fecha = editTextFechaIni.text.toString()
         val estado = if (switchEstadoReserva.isChecked) 1 else 0
 
-        var detalle_reserva = DetalleReservas(random.nextInt(1..100), idLugar, estado, fecha , horaIni, horaFin, 0, 0)
+        var detalle_reserva = DetalleReservas(id, random.nextInt(1..100), idLugar, estado, fecha , horaIni, horaFin, 0, 0)
 
         detalle_reservas= BaseDatosDetalleReservas.getListofDetallesReservasTotales()
+        BaseDatosDetalleReservas.insertarDetalleReserva(detalle_reserva)
+        Toast.makeText(this,"Detalle de Reserva Registrado con Éxito", Toast.LENGTH_SHORT).show()
+        llenarReservaInfo(detalle_reserva.idReserva, detalle_reserva.hora_ini)
 
-        for(datos in detalle_reservas){
-            if(datos.idReserva == detalle_reserva.idReserva){
-                Toast.makeText(this,"El ID de esta reserva ya existe", Toast.LENGTH_SHORT).show()
-            }
-            else {
-                BaseDatosDetalleReservas.insertarDetalleReserva(detalle_reserva)
-                Toast.makeText(this,"Detalle de Reserva Registrado con Éxito", Toast.LENGTH_SHORT).show()
-                llenarReservaInfo(detalle_reserva.idReserva, detalle_reserva.hora_ini)
-
-            }
-        }
     }
 
     fun llenarReservaInfo(idReserva: Int, hora_ini: String){
@@ -70,15 +63,24 @@ class CrearReservaActivity : AppCompatActivity()  {
         var reserva = Reservas(id, idUsuario,idReserva, fechaIni, fechaFin, 0,0 )
 
         BaseDatosReservas.insertarReserva(reserva)
-        val intent = Intent(this, UsuarioLoggedActivity::class.java)
-        intent.putExtra("idUsuario", usuario)
         Alerter.create(this)
                 .setTitle("Reservación Realizada con Éxito")
-                .setText("Recuerde su reservación a las "+hora_ini+" horas")
-                .setDuration(5000)
+                .setText("Recuerde su reservación a las $hora_ini horas")
+                .setDuration(8000)
                 .enableSwipeToDismiss()
+                .setOnClickListener({
+                    irUsuarioLogged()
+                })
                 .show()
+
+
+    }
+
+    fun irUsuarioLogged(){
+        val intent = Intent(this, UsuarioLoggedActivity::class.java)
+        intent.putExtra("idUsuario", usuario)
         startActivity(intent)
+        finish()
     }
 
     fun Random.nextInt(range: IntRange): Int {

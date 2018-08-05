@@ -39,7 +39,8 @@
         <activity android:name=".Reservas.ReservasUsuarioActivity" />
         <activity android:name=".Detalle_Reservas.DetalleReservasActivity" />
         <activity android:name=".Reservas.CrearReservaActivity" />
-        <activity android:name=".Reservas.EditarReservaActivity"></activity>
+        <activity android:name=".Reservas.EditarReservaActivity" />
+        <activity android:name=".Detalle_Reservas.IntentTelefonoDetalleReservaActivity"></activity>
     </application>
 
 </manifest>

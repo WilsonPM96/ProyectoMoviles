@@ -9,11 +9,13 @@
         android:id="@+id/txtShowIdLugar"
         android:layout_width="159dp"
         android:layout_height="35dp"
+        android:layout_alignLeft="@+id/divider2"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/divider2"
-        android:layout_alignLeft="@+id/divider2"
         android:layout_marginTop="27dp"
-        android:text="@string/txt_id_Lugar" />
+        android:text="@string/txt_id_Lugar"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtShowFecha"
@@ -22,7 +24,9 @@
         android:layout_alignTop="@+id/txtShowIdLugar"
         android:layout_toEndOf="@+id/txtShowIdLugar"
         android:layout_toRightOf="@+id/txtShowIdLugar"
-        android:text="@string/txt_fecha" />
+        android:text="@string/txt_fecha"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
     <View
         android:id="@+id/divider2"
@@ -37,10 +41,12 @@
         android:id="@+id/txtShowHoraIni"
         android:layout_width="159dp"
         android:layout_height="35dp"
-        android:layout_alignStart="@+id/txtShowIdLugar"
         android:layout_alignLeft="@+id/txtShowIdLugar"
+        android:layout_alignStart="@+id/txtShowIdLugar"
         android:layout_below="@+id/txtShowIdLugar"
-        android:text="@string/txt_hora_ini" />
+        android:text="@string/txt_hora_ini"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtShowHoraFin"
@@ -49,5 +55,7 @@
         android:layout_below="@+id/txtShowIdLugar"
         android:layout_toEndOf="@+id/txtShowIdLugar"
         android:layout_toRightOf="@+id/txtShowIdLugar"
-        android:text="@string/txt_hora_fin" />
+        android:text="@string/txt_hora_fin"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 </RelativeLayout>

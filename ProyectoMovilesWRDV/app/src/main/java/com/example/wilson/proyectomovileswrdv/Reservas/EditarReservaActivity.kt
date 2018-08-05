@@ -44,6 +44,7 @@ class EditarReservaActivity : AppCompatActivity() {
     }
 
     fun guardarCambios(){
+        val id = detalle_reservas[0].id.toString().toInt()
         val idReserva = detalle_reservas[0].idReserva.toString().toInt()
         val idLugar = editTextERidLugar.text.toString().toInt()
         val horaIni= editTextEHoraIni.text.toString()
@@ -51,18 +52,18 @@ class EditarReservaActivity : AppCompatActivity() {
         val fecha = editTextEFechaIni.text.toString()
         val estado = if (switchEEstadoReserva.isChecked) 1 else 0
 
-        var detalle_reserva = DetalleReservas(idReserva, idLugar, estado, fecha , horaIni, horaFin, 0, 0)
+        var detalle_reserva = DetalleReservas(id, idReserva, idLugar, estado, fecha , horaIni, horaFin, 0, 0)
 
         BaseDatosDetalleReservas.actualizarDetalleReserva(detalle_reserva)
         Toast.makeText(this,"Detalle de Reserva Actualizado con Éxito", Toast.LENGTH_SHORT).show()
-        guardarReservaInfo(detalle_reserva.idReserva)
+        guardarReservaInfo(detalle_reserva.idReserva, detalle_reserva.id)
 
 
         }
 
 
-    fun guardarReservaInfo(idReserva: Int){
-        val id = 0
+    fun guardarReservaInfo(idReserva: Int, id: Int){
+        val id = id
         val idReserva = idReserva
         val idUsuario = editTextERidUsuario.text.toString().toInt()
         val fechaIni = editTextEFechaIni.text.toString()
@@ -74,6 +75,7 @@ class EditarReservaActivity : AppCompatActivity() {
         val intent = Intent(this, ReservasUsuarioActivity::class.java)
         intent.putExtra("idUsuario", usuario)
         startActivity(intent)
+        finish()
     }
 
 }

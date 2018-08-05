@@ -10,24 +10,30 @@
         android:id="@+id/txtUsername"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:textSize="18sp" />
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtFecha_Ini"
         android:layout_width="210dp"
         android:layout_height="35dp"
         android:layout_below="@+id/txtUsername"
-        android:textSize="18sp" />
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtFecha_Fin"
         android:layout_width="210dp"
         android:layout_height="35dp"
         android:layout_below="@+id/txtFecha_Ini"
-        android:textSize="18sp" />
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnDetallesReservas"
@@ -38,7 +44,8 @@
         android:layout_toRightOf="@+id/txtFecha_Ini"
         android:background="@android:color/holo_red_dark"
         android:text="@string/btn_Detalles_Reservas"
-        android:textColor="@android:color/background_light" />
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
     <View
         android:id="@+id/divider2"

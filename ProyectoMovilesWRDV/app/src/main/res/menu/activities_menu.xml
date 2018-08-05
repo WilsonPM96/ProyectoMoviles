@@ -3,7 +3,10 @@
 
 
     <item
-        android:id="@+id/item_menu_compartir"
+        android:id="@+id/item_menu_compartir_telefono"
+        android:title="@string/compartir_telefono" />
+    <item
+        android:id="@+id/item_menu_compartir_correo"
         android:title="@string/compartir" />
     <item
         android:id="@+id/item_menu_editar"

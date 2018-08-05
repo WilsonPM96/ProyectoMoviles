@@ -75,5 +75,6 @@ class UsuarioLoggedActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         Toast.makeText(this, "Te esperamos de regreso", Toast.LENGTH_SHORT).show()
+        finish()
     }
 }

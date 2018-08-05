@@ -19,7 +19,8 @@
     <string name="password">Contraseña</string>
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>
-    <string name="compartir">Compartir</string>
+    <string name="compartir">Compartir Por Correo</string>
+    <string name="compartir_telefono">Enviar por Celular</string>
     <string name="txt_lista_reservas">Lista Reservas</string>
     <string name="txt_detalles_reserva">Detalles Reserva</string>
     <string name="txt_id_Reserva">Id Reserva</string>
@@ -45,7 +46,7 @@
     <string name="horafin_hint">Hora Fin</string>
     <string name="switch_Label">Reservado</string>
     <string name="btn_HacerReserva">Hacer Reserva</string>
-
+    <string name="busquedaMapa">Buscar, Universidad, Cine, Parque</string>
     <string name="txt_ETituloReserva">Editar Reserva</string>
     <string name="txt_ERidLugar">Id Lugar</string>
     <string name="txt_ERidUsuario">Id Usuario</string>
@@ -62,6 +63,22 @@
     <string name="horafin_Ehint">Hora Fin</string>
     <string name="switch_ELabel">Reservado</string>
     <string name="btn_EHacerReserva">Guardar Cambios</string>
+
+    <string name="txt_TituloT">Compartir Vía Celular</string>
+    <string name="txt_nombreContacto">Nombre Contacto</string>
+    <string name="txt_numeroContacto">Número Contacto</string>
+    <string name="txt_horainiT">Hora de Inicio</string>
+    <string name="txt_horafinT">Hora de Fin</string>
+    <string name="txt_reservaIdT">Reserva ID</string>
+    <string name="button_invitarT">Enviar Invitación</string>
+
+    <string name="editText_nombreContacto">Nombre Contacto</string>
+    <string name="editText_numeroContacto">Número Contacto</string>
+    <string name="editText_horainiT">Hora de Inicio</string>
+    <string name="editText_horafinT">Hora de Fin</string>
+    <string name="editText_reservaIdT">Reserva ID</string>
+
+
 
 
     <string name="title_activity_google_maps">Reserva</string>

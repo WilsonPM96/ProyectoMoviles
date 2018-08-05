@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo3"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
@@ -45,7 +46,9 @@
         android:layout_marginTop="40dp"
         android:background="@android:color/holo_green_dark"
         android:text="@string/btn_empezar"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.484"

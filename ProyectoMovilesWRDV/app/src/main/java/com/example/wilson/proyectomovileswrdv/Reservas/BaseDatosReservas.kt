@@ -27,10 +27,13 @@ class BaseDatosReservas {
         }
 
         fun actualizarReserva(reserva: Reservas) {
-            "http://192.168.100.189:1337/Reservas?idReserva=${reserva.idReserva}".httpPatch(listOf("idUsuario" to reserva.idUsuario, "idReserva" to reserva.idReserva,"fecha_ini" to reserva.fecha_ini, "fecha_fin" to reserva.fecha_fin))
+            eliminarReserva(reserva.id)
+            "http://192.168.100.189:1337/Reservas".httpPost(listOf("idUsuario" to reserva.idUsuario, "idReserva" to reserva.idReserva,"fecha_ini" to reserva.fecha_ini, "fecha_fin" to reserva.fecha_fin))
                     .responseString { request, _, result ->
                         Log.d("http-ejemplo", request.toString())
                     }
+
+
         }
 
         fun getListofReservas(idUsuario: Int): ArrayList<Reservas> {

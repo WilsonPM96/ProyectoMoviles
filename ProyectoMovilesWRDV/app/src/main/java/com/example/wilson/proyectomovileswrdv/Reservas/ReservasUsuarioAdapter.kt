@@ -40,7 +40,7 @@ class ReservasUsuarioAdapter (private val reservasList: List<Reservas>) :  Recyc
         override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
             menu?.add(Menu.NONE, R.id.item_menu_editar, Menu.NONE, "Editar")
             menu?.add(Menu.NONE, R.id.item_menu_eliminar, Menu.NONE, "Eliminar")
-            menu?.add(Menu.NONE, R.id.item_menu_compartir, Menu.NONE,"Compartir")
+            menu?.add(Menu.NONE, R.id.item_menu_compartir_correo, Menu.NONE,"Compartir por Correo")
         }
     }
 

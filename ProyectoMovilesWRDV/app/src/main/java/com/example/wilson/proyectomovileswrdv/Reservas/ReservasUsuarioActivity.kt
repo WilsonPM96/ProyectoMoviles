@@ -1,8 +1,10 @@
 package com.example.wilson.proyectomovileswrdv.Reservas
 
 import android.content.Intent
+import android.database.Cursor
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
@@ -52,6 +54,7 @@ class ReservasUsuarioActivity : AppCompatActivity() {
                 intent.putExtra("reserva", reserva)
                 intent.putExtra("idUsuario", usuario)
                 startActivity(intent)
+                finish()
                 return true
             }
             R.id.item_menu_eliminar -> {
@@ -65,6 +68,7 @@ class ReservasUsuarioActivity : AppCompatActivity() {
                             intent.putExtra("idUsuario", usuario)
                             Toast.makeText(this, "Reserva Eliminada con Éxito", Toast.LENGTH_SHORT).show()
                             startActivity(intent)
+                            finish()
                         }
                         )
                         .setNegativeButton("No", null)
@@ -72,7 +76,8 @@ class ReservasUsuarioActivity : AppCompatActivity() {
                 dialogo.show()
                 return true
             }
-            R.id.item_menu_compartir -> {
+            R.id.item_menu_compartir_correo -> {
+                enviarCorreo()
                 return true
             }
             else -> {
@@ -82,7 +87,23 @@ class ReservasUsuarioActivity : AppCompatActivity() {
         }
     }
 
-
+    fun enviarCorreo() {
+        val addressees = arrayOf("wilson.ramos@epn.edu.ec", "adrian.eguez@epn.edu.ec")
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/html"
+        intent.putExtra(Intent.EXTRA_EMAIL, addressees)
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Invitación Evento")
+        intent.putExtra(Intent.EXTRA_TEXT, "Te invito a este evento el dia ${reservas[0].fecha_ini} estará muy entretenido.")
+        startActivity(intent)
+        finish()
+    }
 
 
 }
+
+
+
+
+
+
+

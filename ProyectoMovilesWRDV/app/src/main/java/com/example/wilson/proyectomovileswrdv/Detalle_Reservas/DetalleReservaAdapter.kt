@@ -16,7 +16,7 @@ class DetalleReservaAdapter(private val detallereservasList: List<DetalleReserva
         this.position = position
     }
 
-    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view){
+    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnCreateContextMenuListener{
 
         var idLugar: TextView
         var fecha: TextView
@@ -30,7 +30,11 @@ class DetalleReservaAdapter(private val detallereservasList: List<DetalleReserva
             fecha = view.findViewById(R.id.txtShowFecha) as TextView
             hora_ini = view.findViewById(R.id.txtShowHoraIni) as TextView
             hora_fin = view.findViewById(R.id.txtShowHoraFin) as TextView
+            view.setOnCreateContextMenuListener(this)
+        }
 
+        override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+            menu?.add(Menu.NONE, R.id.item_menu_compartir_telefono, Menu.NONE,"Compartir por Celular")
         }
 
 

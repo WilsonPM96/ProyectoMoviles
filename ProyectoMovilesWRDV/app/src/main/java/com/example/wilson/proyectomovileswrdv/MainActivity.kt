@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     fun iraActividadRegistro(){
         val intent = Intent(this, RegistrarUsuariosActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
 

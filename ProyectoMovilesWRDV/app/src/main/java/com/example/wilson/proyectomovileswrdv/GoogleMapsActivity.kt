@@ -263,6 +263,7 @@ class GoogleMapsActivity :
         intent.putExtra("idLugar", arregloLugares[pos])
         intent.putExtra("idUsuario", usuario)
         startActivity(intent)
+        finish()
         return true
     }
 
@@ -292,7 +293,7 @@ class GoogleMapsActivity :
                     txtBuscarLugar.text.contains("epn") -> moverCamaraPorLatLongZoom(epnLatLang, zoom)
                     txtBuscarLugar.text.contains("universidad central") -> moverCamaraPorLatLongZoom(centralLatLang, zoom)
                     txtBuscarLugar.text.contains("use") -> moverCamaraPorLatLongZoom(centralLatLang, zoom)
-                    txtBuscarLugar.text.contains("universidad tecnológica equinoccional") -> moverCamaraPorLatLongZoom(uteLatLang, zoom)
+                    txtBuscarLugar.text.contains("universidad tecnológica equinoccial") -> moverCamaraPorLatLongZoom(uteLatLang, zoom)
                     txtBuscarLugar.text.contains("ute") -> moverCamaraPorLatLongZoom(uteLatLang, zoom)
                     txtBuscarLugar.text.contains("Universidad de las Américas") -> moverCamaraPorLatLongZoom(udlaLatLang, zoom)
                     txtBuscarLugar.text.contains("udla") -> moverCamaraPorLatLongZoom(udlaLatLang, zoom)
@@ -309,9 +310,6 @@ class GoogleMapsActivity :
                     txtBuscarLugar.text.contains("parque Ejido") -> moverCamaraPorLatLongZoom(parqueEjido, zoom)
                     txtBuscarLugar.text.contains("parque Carolina") -> moverCamaraPorLatLongZoom(parqueCarolina, zoom)
                     txtBuscarLugar.text.contains("Parque Bicentenario") -> moverCamaraPorLatLongZoom(parqueBicentenario, zoom)
-                    txtBuscarLugar.text.contains("Buscar universidad") -> arregloMarcadoresU
-                    txtBuscarLugar.text.contains("Buscar cine") -> arregloMarcadoresC
-                    txtBuscarLugar.text.contains("Buscar parque") -> arregloMarcadoresP
                 }
 
             }
