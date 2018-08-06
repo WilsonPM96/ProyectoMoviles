@@ -15,7 +15,9 @@ class Reservas(var id: Int, var idUsuario: Int, var idReserva: Int, var fecha_in
 
     )
 
-    override fun writeToParcel(parcel: Parcel, flags: Int){
+    
+	
+	override fun writeToParcel(parcel: Parcel, flags: Int){
         parcel.writeInt(id)
         parcel.writeInt(idUsuario)
         parcel.writeInt(idReserva)
@@ -29,6 +31,7 @@ class Reservas(var id: Int, var idUsuario: Int, var idReserva: Int, var fecha_in
         return 0
     }
 
+	
     companion object CREATOR : Parcelable.Creator<Reservas> {
         override fun createFromParcel(parcel: Parcel): Reservas {
             return Reservas(parcel)
