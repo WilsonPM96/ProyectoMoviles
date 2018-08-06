@@ -22,10 +22,11 @@ class RegistrarUsuariosActivity : AppCompatActivity() {
         button_registrar.setOnClickListener{
             view: View? ->  registrarUsuario()
         }
-        btn_ingresar.setOnClickListener {
+       
+	   
+	    btn_ingresar.setOnClickListener {
             view: View? -> loguearse()
         }
-
 
     }
 
@@ -88,6 +89,7 @@ class RegistrarUsuariosActivity : AppCompatActivity() {
 
 
     }
+	
 
     fun Random.nextInt(range: IntRange): Int {
         return range.start + nextInt(range.last - range.start)
