@@ -14,3 +14,6 @@
 {"idLugar":14,"posX":-0.2091502,"posY":-78.5007996,"tipoLugar":"Parque","ubicacionLugar":"El Ejido","horarioAtencionLugar":"08:00-21:00","createdAt":1533359726196,"updatedAt":1533359726196,"id":14,"_id":14}
 {"idLugar":15,"posX":-0.1862298,"posY":-78.4937723,"tipoLugar":"Parque","ubicacionLugar":"La Carolina","horarioAtencionLugar":"08:00-21:00","createdAt":1533359750700,"updatedAt":1533359750700,"id":15,"_id":15}
 {"idLugar":16,"posX":-0.1281612,"posY":-78.4917603,"tipoLugar":"Parque","ubicacionLugar":"Bicentenario","horarioAtencionLugar":"08:00-21:00","createdAt":1533359771370,"updatedAt":1533359771370,"id":16,"_id":16}
+{"idLugar":14,"posX":-0.2207652,"posY":-78.5160871,"tipoLugar":"Parque","ubicacionLugar":"Iglesia La Compañia","horarioAtencionLugar":"07:00-21:00","createdAt":1533359726199,"updatedAt":1533359726196,"id":14,"_id":17}
+{"idLugar":15,"posX":-0.1806478,"posY":-78.4700269,"tipoLugar":"Parque","ubicacionLugar":"Mitad del Mundo","horarioAtencionLugar":"06:00-21:00","createdAt":1533359750709,"updatedAt":1533359750700,"id":15,"_id":18}
+{"idLugar":16,"posX":-0.1118381,"posY":-78.3013397,"tipoLugar":"Parque","ubicacionLugar":"El Quinche","horarioAtencionLugar":"08:00-21:00","createdAt":1533359771374,"updatedAt":1533359771370,"id":16,"_id":19}
